@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Llamar al elemento de clave 'name' del contexto-->
+    <h1>Hola {{ name }} XDDD</h1>
+
+    <h3>Categorias</h3>
+    <!-- Llamar al elemento de clave "categories" del contexto-->
+    <p>{{ categories }}</p>
+    <!-- Usar un bucle para recorrer el array de 'categories'-->
+    <ul>
+    {% for category in categories %}
+        <li>{{ category }}</li>
+    {% endfor %}
+    </ul>
+    <!-- Usar condicionales if-else -->
+    <ul>
+        {% for category in categories %}
+            {% if category == 'code' %}
+                <li><b>{{ category }}</b></li>
+            {% else %}
+                <li>{{ category }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+    <!-- Comentarios en Django -->
+    {# Este comentario no es renderizado en HTML #}
+    {% comment %}
+    Esto es 
+    un comentario
+    multilinea
+    {% endcomment %}
+
+    <!-- Filtros en Django -->
+    <!-- Se usa un pipe -->
+    <h5>Total de categorías: {{ categories|length }}</h5>
+</body>
+</html>
