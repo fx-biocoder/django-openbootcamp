@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'post',
+    'django_seed',
 ]
 
 MIDDLEWARE = [
@@ -52,10 +53,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'my_blog.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

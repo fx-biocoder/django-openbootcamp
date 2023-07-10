@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queries</title>
+</head>
+<body>
+    <h1>Hola mundo!!!!</h1>
+    <h3>Filtrando autor donde autor vale gwhite@example.net</h3>
+    
+    <ul>
+        {% for element in filtered %}
+            <li>{{ element.name }} | {{ element.email }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Todos los autores:</h3>
+    <ul>
+        {% for author in authors %}
+            <li>{{ author.name }} ( {{ author.email }} )</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Total de autores: {{ authors|length }}</h3>
+</body>
+</html>
