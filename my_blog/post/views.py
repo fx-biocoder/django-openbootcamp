@@ -57,10 +57,16 @@ def queries(request):
 
 # Actualizar datos de la tabla de la base de datos
 
-"""
 def update(request):
+    """
+    author = Author.objects.get(id=1)
+    author.name = '<Nombre>'
+    author.email = '<Email>'
+    author.save()
+    return HttpResponse('Todo ok sister')
+    """
     if request.method == 'POST':
-        author = Author.objects.get(id=1)
+        author = Author.objects.get(id=1) # Obtener elemento cuya id vale 1
         author.name = request.POST['name']
         author.email = request.POST['email']
-"""
+        return HttpResponse('Todo ok papi, la base de datos fue modificada')
